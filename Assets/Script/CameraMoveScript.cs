@@ -15,6 +15,11 @@ public class CameraMoveScript : MonoBehaviour
 
     void LateUpdate()
     {
+        if(_player ==null)
+        {
+            return;
+        } // if player hasnt attach or destroy other codes not working
+
         var CamPosition = transform.position;
         CamPosition.x = _player.position.x;
 

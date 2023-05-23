@@ -17,4 +17,17 @@ public class EnemieController : MonoBehaviour
     {
         rigid.velocity = new Vector2(EnemieMoveSpeed,rigid.velocity.y);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Collector"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

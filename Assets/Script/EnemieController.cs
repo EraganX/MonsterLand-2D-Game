@@ -8,7 +8,7 @@ public class EnemieController : MonoBehaviour
 
     private Rigidbody2D rigid;
 
-    void Start()
+    void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
     }

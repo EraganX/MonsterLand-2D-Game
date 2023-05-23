@@ -12,6 +12,7 @@ public class EnemiesSpawner : MonoBehaviour
 
     EnemieController newScipt;
 
+
     void Start()
     {
         StartCoroutine(spawner()) ;
@@ -25,6 +26,7 @@ public class EnemiesSpawner : MonoBehaviour
             int Location = Random.Range(0,2);
 
             newEnemie = Instantiate(enemie[enemieType]);
+
             newScipt = newEnemie.GetComponent<EnemieController>();
 
             

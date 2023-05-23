@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7072173698899451646}
   - component: {fileID: 7072173698899451642}
   - component: {fileID: 7072173698899451643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Red Zombie
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

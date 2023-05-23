@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7329626044154159917}
   - component: {fileID: 7329626044154159905}
   - component: {fileID: 7329626044154159906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Green Zombie
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

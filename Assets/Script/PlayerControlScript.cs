@@ -30,7 +30,7 @@ public class PlayerControlScript : MonoBehaviour
 
     private void GetUserInput()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
+        _horizontalInput = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(_horizontalInput, 0f, 0f) * _moveSpeed * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space) && _isGrounded)

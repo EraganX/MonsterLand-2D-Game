@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControlScript : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed, _jumpForce;
+    [SerializeField] private GameObject _gameoverPanel;
     
     private float _horizontalInput;
 
@@ -17,6 +18,7 @@ public class PlayerControlScript : MonoBehaviour
 
     void Start()
     {
+        _gameoverPanel.SetActive(false);
         _playerRB = GetComponent<Rigidbody2D>();
         _playerAnime = GetComponent<Animator>();
         _playerSR = GetComponent<SpriteRenderer>();
@@ -46,6 +48,12 @@ public class PlayerControlScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) {
             _isGrounded = true;
             _isJump = false;
+        }
+
+        if (collision.gameObject.CompareTag("Enemie"))
+        {
+            _gameoverPanel.SetActive(true);
+            Destroy(gameObject);
         }
     }
 

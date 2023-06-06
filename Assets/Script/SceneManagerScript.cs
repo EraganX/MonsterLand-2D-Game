@@ -12,4 +12,14 @@ public class SceneManagerScript : MonoBehaviour
     public void QuitGame() {
         Application.Quit();
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

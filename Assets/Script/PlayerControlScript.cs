@@ -19,6 +19,8 @@ public class PlayerControlScript : MonoBehaviour
     void Start()
     {
         _gameoverPanel.SetActive(false);
+        Time.timeScale = 1;
+
         _playerRB = GetComponent<Rigidbody2D>();
         _playerAnime = GetComponent<Animator>();
         _playerSR = GetComponent<SpriteRenderer>();
@@ -53,6 +55,9 @@ public class PlayerControlScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemie"))
         {
             _gameoverPanel.SetActive(true);
+
+            Time.timeScale = 0;
+
             Destroy(gameObject);
         }
     }

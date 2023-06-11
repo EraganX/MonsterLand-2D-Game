@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControlScript : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed, _jumpForce;
-    [SerializeField] private GameObject _gameoverPanel;
+    [SerializeField] private GameObject _gameoverPanel,_gameInfoPanel;
     
     private float _horizontalInput;
 
@@ -16,20 +17,41 @@ public class PlayerControlScript : MonoBehaviour
     private Animator _playerAnime;
     private SpriteRenderer _playerSR;
 
+    private HealthBarScript healthBarScript;
+    public Image healthbarImage;
+
+    public bool isAttcked;
+
     void Start()
     {
         _gameoverPanel.SetActive(false);
+        _gameInfoPanel.SetActive(true);
         Time.timeScale = 1;
 
         _playerRB = GetComponent<Rigidbody2D>();
         _playerAnime = GetComponent<Animator>();
         _playerSR = GetComponent<SpriteRenderer>();
+
+        healthBarScript = healthbarImage.GetComponent<HealthBarScript>();
     }
 
     void Update()
     {
-        GetUserInput();
-        PlayerAnimation();
+        if (healthBarScript.isHealing==true)
+        {
+            GetUserInput();
+            PlayerAnimation();
+        }
+        else
+        {
+            _gameoverPanel.SetActive(true);
+            _gameInfoPanel.SetActive(false);
+            Time.timeScale = 0;
+            isAttcked = false;
+            Destroy(gameObject);
+            print("Dead - Low health");
+        }
+        
     }
 
     private void GetUserInput()
@@ -55,10 +77,17 @@ public class PlayerControlScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemie"))
         {
             _gameoverPanel.SetActive(true);
-
+            _gameInfoPanel.SetActive(false);
             Time.timeScale = 0;
-
+            isAttcked = true;
             Destroy(gameObject);
+            print("Dead - Enemy Attack");
+        }
+
+        if(collision.gameObject.tag == "Food")
+        {
+            healthBarScript._isEat=true;
+            Destroy(collision.gameObject);
         }
     }
 

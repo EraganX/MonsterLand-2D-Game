@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemie
   - Collector
+  - Food
   layers:
   - Default
   - TransparentFX

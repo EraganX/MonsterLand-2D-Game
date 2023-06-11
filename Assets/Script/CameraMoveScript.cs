@@ -8,11 +8,6 @@ public class CameraMoveScript : MonoBehaviour
 
     private float _maxMove = 23f, _minMove = -23f;
 
-    void Start()
-    {
-
-    }
-
     void LateUpdate()
     {
         if(_player ==null)

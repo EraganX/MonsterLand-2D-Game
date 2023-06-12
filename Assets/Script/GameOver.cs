@@ -9,6 +9,7 @@ public class GameOver : MonoBehaviour
     PlayerControlScript _playerControlScript;
 
     public TMP_Text Cause;
+    public TMP_Text Score;
 
     private void Awake()
     {
@@ -22,7 +23,9 @@ public class GameOver : MonoBehaviour
         }
         else
         {
-            Cause.text = "(dead by Lack of Food)";
+            Cause.text = "(Low health)";
         }
+
+        Score.text = "Score : " + _playerControlScript.score.ToString();
     }
 }

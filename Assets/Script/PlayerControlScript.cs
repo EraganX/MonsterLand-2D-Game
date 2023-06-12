@@ -18,12 +18,15 @@ public class PlayerControlScript : MonoBehaviour
     private SpriteRenderer _playerSR;
 
     private HealthBarScript healthBarScript;
-    public Image healthbarImage;
 
+    public Image healthbarImage;
+    public int score;
     public bool isAttcked;
 
     void Start()
     {
+        score = 0;
+        
         _gameoverPanel.SetActive(false);
         _gameInfoPanel.SetActive(true);
         Time.timeScale = 1;
@@ -49,7 +52,6 @@ public class PlayerControlScript : MonoBehaviour
             Time.timeScale = 0;
             isAttcked = false;
             Destroy(gameObject);
-            print("Dead - Low health");
         }
         
     }
@@ -81,12 +83,17 @@ public class PlayerControlScript : MonoBehaviour
             Time.timeScale = 0;
             isAttcked = true;
             Destroy(gameObject);
-            print("Dead - Enemy Attack");
         }
 
         if(collision.gameObject.tag == "Food")
         {
             healthBarScript._isEat=true;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            score += 1;
             Destroy(collision.gameObject);
         }
     }

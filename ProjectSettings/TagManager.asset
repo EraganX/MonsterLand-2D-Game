@@ -8,6 +8,7 @@ TagManager:
   - Enemie
   - Collector
   - Food
+  - Coin
   layers:
   - Default
   - TransparentFX

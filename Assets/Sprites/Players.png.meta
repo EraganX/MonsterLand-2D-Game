@@ -120,9 +120,9 @@ TextureImporter:
       name: Players_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 11
         y: 247
-        width: 81
+        width: 102
         height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -204,13 +204,13 @@ TextureImporter:
       name: Players_4
       rect:
         serializedVersion: 2
-        x: 563
+        x: 546
         y: 252
-        width: 86
+        width: 103
         height: 222
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 12, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

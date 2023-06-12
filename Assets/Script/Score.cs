@@ -20,6 +20,6 @@ public class Score : MonoBehaviour
     private void Update()
     {
         score = playerControlScript.score;
-        _scoreText.text = "coin : " + score.ToString();
+        _scoreText.text = "coins : " + score.ToString("000");
     }
 }

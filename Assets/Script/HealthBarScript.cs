@@ -11,7 +11,7 @@ public class HealthBarScript : MonoBehaviour
     [SerializeField] private float _addHealth = 0.3f;
     [SerializeField] private float _deductHealth = 0.3f;
 
-    private void Start()
+    private void Awake()
     {
         _healthBar = GetComponent<Image>();
         isHealing = true;

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 137411f04d0f97047a0ae620edaf12e7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Zombie Holocaust
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: dff97b985a403a440bd208ca6419ed9d, type: 3}
+  customCharacters: 
+  fontRenderingMode: 1
+  ascentCalculationMode: 2
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
